@@ -1,6 +1,8 @@
+require 'fluent/plugin/input'
 require 'fluent_plugin_zabbix_agent/version'
 
-class Fluent::ZabbixAgentInput < Fluent::Input
+module Fluent::Plugin
+  class ZabbixAgentInput < Input
   Fluent::Plugin.register_input('zabbix_agent', self)
 
   unless method_defined?(:log)
@@ -176,3 +178,4 @@ class Fluent::ZabbixAgentInput < Fluent::Input
     end
   end # TimerWatcher
 end # Fluent::ZabbixAgentInput
+end
